@@ -10,6 +10,7 @@
 1. https://github.com/John-P/wsic
 2. https://github.com/smujiang/WSI2DICOM 
 3. https://github.com/debarron/svs-image-analysis 
+4. https://github.com/visioncortex/vtracer
 
 ## format des fichier donnée: svs
 https://openslide.org/formats/aperio/
