@@ -31,9 +31,18 @@ de plusieurs gigaoctets.
 **Semaine 3**:
 - Recherche d'une manière de tokenizer l'image sous forme vectoriel: 
     - svg: Pas possible car image trop complexe. On ne peut pas représenter avec les courbes de bezier ou divers géométrie de manière simple.
-- Implémentation d'un pipeline proche de **CINR**. Pour commencer, je vais essayer sur une image, l'obj est le suivant, prendre un fichier .svs, entrainer un modèle de reseau de neurone (comme CINR) afin de overfit le modèle sur une image pour qu'il puisse la reproduire à partir des poids du modèle.
+- Implémentation d'un pipeline proche de **CINR**. Pour commencer, je vais essayer sur une image, l'obj est le suivant, prendre un fichier .svs, entrainer un modèle de reseau de neurone (comme CINR) afin de overfit le modèle sur une image pour qu'il puisse la reproduire à partir des poids du modèle. Commencement de teste d'entrainement sur le supercalculateur.
+
+**Semaine 4**:
+les obj de la semaine:
+- Terminer implémentation du **CINR** au complet sur au moins un svs complet, pour présentation.
+- Convertir globalement une fichier svs, et non juste des tuiles d'images (au moins une pour chaque codec)
+- explorer le modèle CLERIC
 
 ### `expe_compression_classique/` - Benchmark
+
+- Benchmark de compression classique sur patches et lames SVS.
+- Test expérimental du SVG vectoriel pour la compression : [`03_test_format_svg.ipynb`](expe_compression_classique/03_test_format_svg.ipynb)
 
 
 ### Données utilisées
