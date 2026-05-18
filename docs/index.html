@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benchmark de compression de lames histopathologiques — JPEG, WebP, JPEG2000 & SVG</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Benchmark de compression d'images WSI</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Nathan BEN SOUSSAN<sup>1</sup>,</span>
+              Nazim BENZERDJEB<sup>2</sup>,</span>
+              Antoine RICHARD<sup>3</sup>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link.
+              <span class="link-block">
+                <a href="https://doi.org/10.1007/978-3-031-72104-5_19"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+
+              </span>
+              -->
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/nathbns/SVSLameHispathologique"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class=" is-max-desktop">
+    <!-- Abstract. -->
+    <div class=" is-centered has-text-centered">
+      <div class=" is-four-fifths">
+        <h2 class="title is-3">Comparaison des formats de compression classiques</h2>
+        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto 20px auto;">
+          <p>
+            Comparaison visuelle d'une région d'intérêt d'une lame histopathologique compressée avec différents formats
+            (JPEG, WebP, JPEG2000) à niveau de qualité équivalent. La réduction de taille de fichier par rapport
+            au PNG original est indiquée pour chaque format.
+          </p>
+        </div>
+        <img src="./static/images/summary.png" style="max-width: 70%; height: auto; margin-bottom: 20px;">
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Résumé</h2>
+        <div class="content has-text-justified">
+          <p>
+            Ce projet explore l'efficacité de différents formats de compression d'image appliqués aux lames histopathologiques
+            (Whole Slide Images — WSI).
+          </p>
+          <p>
+            Dans un premier temps, un benchmark systématique compare trois formats de compression classiques — JPEG, WebP
+            et JPEG2000 — sur le dataset SVS-TCGA-2048. Les métriques PSNR et SSIM sont mesurées pour chaque format à
+            différents niveaux de qualité (QF), permettant d'identifier le meilleur compromis entre fidélité visuelle et
+            réduction de la taille de fichier.
+          </p>
+          <p>
+            Les résultats montrent que WebP offre le meilleur rapport qualité/taille pour les lames histopathologiques,
+            suivi de JPEG2000 puis JPEG. La réduction de taille peut atteindre 97% tout en maintenant une qualité
+            visuelle diagnostique acceptable (PSNR supérieur à 30 dB).
+          </p>
+          <p>
+            Dans un second temps, une expérimentation alternative est menée : la conversion des images vers le format
+            vectoriel SVG via l'outil VTracer. L'objectif est d'évaluer si la représentation vectorielle peut offrir
+            une compression efficace pour ce type d'images. Les résultats indiquent que le SVG est en moyenne 10× plus
+            volumineux que le PNG original sur les images histopathologiques, en raison de leur nature riche en textures
+            qui résiste à la vectorisation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section"></section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class=" is-centered ">
+      <h2 class="title is-3 has-text-centered">Méthodes de compression</h2>
+      <hr>
+      <h3 class="title">Compression classique : JPEG, WebP, JPEG2000</h3>
+      <img src="./static/images/bench_01.png">
+      <p>
+        JPEG est le standard historique de compression d'image, basé sur la DCT (Discrete Cosine Transform) avec quantification des coefficients. WebP, développé par Google, combine compression intra-frame (VP8) et prédiction pour offrir de meilleurs ratios. JPEG2000 utilise la transformée en ondelettes (DWT) pour une compression multi-résolution plus efficace, particulièrement adaptée aux grandes images comme les WSI.
+      </p>
+      <p>
+        Le benchmark mesure le PSNR et le SSIM pour chaque format à différents niveaux de qualité (QF = 10, 30, 50, 70, 90), sur le dataset SVS-TCGA-2048 (407 images de 2048×2048 pixels extraites de lames TCGA).
+      </p>
+      <br>
+      <hr>
+      <br>
+
+      <div class="columns is-centered" style="margin-bottom: 5%;">
+        <div style="width: 40% " class="column">
+          <img src="./static/images/svg_12.png">
+
+        </div>
+
+        <div class="column" style="width: 60%; vertical-align; middle;">
+          <br>
+          <h3 class="title is-4">Approche vectorielle : SVG avec VTracer</h3>
+          <p>VTracer convertit les images matricielles en SVG vectoriel pur (chemins &lt;path&gt;) en détectant automatiquement les contours et couleurs. L'objectif est d'évaluer si la représentation vectorielle peut compresser efficacement les lames histopathologiques.</p>
+          <br>
+          <h3 class="title is-4">Résultat SVG :</h3>
+          <p>Sur les images histopathologiques riches en textures, le SVG est en moyenne <strong>10× plus volumineux</strong> que le PNG original. La vectorisation n'est donc pas adaptée à ce type d'imagerie médicale, car la complexité texturale empêche une représentation économe en primitives vectorielles.</p>
+        </div>
+      </div>
+
+
+
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser"></section>
+  <div class="container is-max-desktop">
+    <div class=" is-centered ">
+
+      <h2 class="title is-3 has-text-centered">Résultats du benchmark</h2>
+      <hr>
+      <h3 class="title is-4">PSNR par format et niveau de qualité</h3>
+      <img src="./static/images/bench_02.png">
+
+      <h3 class="title is-4">SSIM par format et niveau de qualité</h3>
+      <img src="./static/images/bench_03.png">
+
+      <h3 class="title is-4">Taille des fichiers compressés</h3>
+      <img src="./static/images/bench_04.png">
+        </div>
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/example17_.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<!--
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <!-- <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Visual Effects</h2>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div> -->
+      <!--/ Visual Effects. -->
+
+
+
+  <!-- </div>
+</section> -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@misc{SVSLameHispathologique2024,
+  author       = {Ben Soussan, Nathan},
+  title        = {{Benchmark de compression d'images WSI : JPEG, WebP, JPEG2000 \& SVG}},
+  year         = {2024},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/nathbns/SVSLameHispathologique}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The website template was borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
