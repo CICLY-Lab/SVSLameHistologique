@@ -38,11 +38,10 @@ les obj de la semaine:
 - Terminer implémentation du **CINR** au complet sur au moins un svs complet, pour présentation.
 - Convertir globalement une fichier svs, et non juste des tuiles d'images (au moins une pour chaque codec)
 - explorer le modèle CLERIC
+- MRXS (comparer avec le svs/dicom)
+- CINR sur un plus grand fichier
 
-### `expe_compression_classique/` - Benchmark
-
-- Benchmark de compression classique sur patches et lames SVS.
-- Test expérimental du SVG vectoriel pour la compression : [`03_test_format_svg.ipynb`](expe_compression_classique/03_test_format_svg.ipynb)
+**prochaine réunion**: mardi pro 10h
 
 
 ### Données utilisées
