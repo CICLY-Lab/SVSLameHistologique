@@ -69,7 +69,7 @@ class FourierFeatures(nn.Module):
 
 
 class Sine(nn.Module):
-    """Activation sinus avec fréquence ajustable ω₀."""
+    """Activation sinus avec fréquence ajustable."""
 
     def __init__(self, w0: float = 1.0) -> None:
         super().__init__()
