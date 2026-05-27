@@ -103,6 +103,37 @@
     <!--/ Abstract. -->
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Exemples de tuiles histopathologiques</h2>
+        <div class="content has-text-justified">
+          <p>
+            Les Whole Slide Images (WSI) sont des lames histopathologiques numérisées à très haute résolution, 
+            pouvant atteindre plusieurs gigaoctets. Pour faciliter l'analyse et le benchmark, nous extrayons 
+            des tuiles de taille fixe (2048×2048 pixels) des zones tissulaires.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/tuile_exemple.png" alt="Exemple de tuile histopathologique">
+            </figure>
+            <p class="has-text-centered"><em>Exemple d'une tuile 2048×2048 extraite d'une lame WSI</em></p>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/file_overview.png" alt="Vue d'ensemble de la structure des fichiers">
+            </figure>
+            <p class="has-text-centered"><em>Structure typique d'un fichier SVS</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <hr>
 
 <section class="section">
@@ -183,7 +214,7 @@
   </div>
 </section>
 
-<section class="hero teaser"></section>
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class=" is-centered ">
 
@@ -197,7 +228,106 @@
 
       <h3 class="title is-4">Taille des fichiers compressés</h3>
       <img src="./static/images/bench_04.png">
+
+      <h3 class="title is-4">Ratios de compression</h3>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <img src="./static/images/ratio_pie.png" alt="Répartition des ratios de compression">
+          <p class="has-text-centered"><em>Répartition des ratios de compression par format</em></p>
         </div>
+        <div class="column is-half">
+          <img src="./static/images/ratio_bar.png" alt="Comparaison des ratios de compression">
+          <p class="has-text-centered"><em>Comparaison des ratios de compression</em></p>
+        </div>
+      </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Artefacts de compression</h2>
+        <div class="content has-text-justified">
+          <p>
+            Les différents formats de compression introduisent des artefacts visuels caractéristiques.
+            JPEG produit des effets de blocs (blocking artifacts) et du flou autour des contours,
+            tandis que WebP et JPEG2000 préservent mieux les détails fins grâce à leurs algorithmes
+            plus sophistiqués. La détection de ces artefacts est cruciale pour l'analyse diagnostique.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/artefacts_compression.png" alt="Artefacts de compression">
+            </figure>
+            <p class="has-text-centered"><em>Visualisation des artefacts de compression</em></p>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/zoom_artefacts.png" alt="Zoom sur les artefacts">
+            </figure>
+            <p class="has-text-centered"><em>Zoom sur les artefacts à fort taux de compression</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Échantillons du benchmark</h2>
+        <div class="content has-text-justified">
+          <p>
+            Exemples de tuiles 2048×2048 utilisées dans le benchmark SVS-TCGA-2048. Ces images
+            proviennent de lames TCGA (The Cancer Genome Atlas) et couvrent différents types de
+            tissus et colorations, permettant une évaluation robuste des algorithmes de compression.
+          </p>
+        </div>
+        <div class="columns is-multiline is-centered">
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./static/images/sample_000.png" alt="Sample 000">
+            </figure>
+            <p class="has-text-centered"><em>Sample 000</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./static/images/sample_001.png" alt="Sample 001">
+            </figure>
+            <p class="has-text-centered"><em>Sample 001</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./static/images/sample_002.png" alt="Sample 002">
+            </figure>
+            <p class="has-text-centered"><em>Sample 002</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./static/images/sample_003.png" alt="Sample 003">
+            </figure>
+            <p class="has-text-centered"><em>Sample 003</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./static/images/sample_004.png" alt="Sample 004">
+            </figure>
+            <p class="has-text-centered"><em>Sample 004</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./static/images/sample_005.png" alt="Sample 005">
+            </figure>
+            <p class="has-text-centered"><em>Sample 005</em></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -249,6 +379,90 @@
   <!-- </div>
 </section> -->
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Compression Neurale (CINR)</h2>
+        <div class="content has-text-justified">
+          <p>
+            Une approche expérimentale de compression utilise les Représentations Neurales Implicites (CINR - 
+            Compression with Implicit Neural Representations). Contrairement aux codecs classiques, cette méthode 
+            entraîne un réseau de neurones (Fourier features + SineCNN) à reproduire l'image à partir de ses seuls 
+            poids. Le modèle est sur-ajusté (overfitting) sur une image spécifique, et les poids du réseau constituent 
+            alors la représentation compressée.
+          </p>
+          <p>
+            Cette approche, inspirée du papier de Lee et al. (MICCAI 2024), est particulièrement prometteuse pour 
+            les images médicales car elle peut apprendre les caractéristiques spécifiques du domaine histopathologique.
+          </p>
+        </div>
+        
+        <h3 class="title is-4">Démonstration sur patch 256×256</h3>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/cinr_demo_00.png" alt="Patch original CINR">
+            </figure>
+            <p class="has-text-centered"><em>Patch original 256×256 (dataset SVS-TCGA-BR)</em></p>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/cinr_demo_01.png" alt="Reconstruction CINR">
+            </figure>
+            <p class="has-text-centered"><em>Original vs Reconstruction (PSNR: 33.8 dB)</em></p>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Test sur lame SVS locale (1024×1024)</h3>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/cinr_visu_00.png" alt="Tuile lame2.svs">
+            </figure>
+            <p class="has-text-centered"><em>Tuile extraite de lame2.svs (1024×1024)</em></p>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/cinr_visu_01.png" alt="Reconstruction lame2.svs">
+            </figure>
+            <p class="has-text-centered"><em>Reconstruction CINR (PSNR: 24.7 dB)</em></p>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Analyse de performance</h3>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/cinr_visu_02.png" alt="Courbe convergence">
+            </figure>
+            <p class="has-text-centered"><em>Courbe de convergence CINR</em></p>
+          </div>
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./static/images/cinr_demo_03.png" alt="Rate-Distortion">
+            </figure>
+            <p class="has-text-centered"><em>Courbe Rate-Distortion : JPEG vs CINR</em></p>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            <strong>Résultats :</strong> Le modèle CINR avec ~1M paramètres atteint 33.8 dB sur un patch 256×256 
+            après 5000 itérations (173s sur M4 Pro). Cependant, la comparaison avec JPEG montre que ce dernier 
+            reste supérieur en termes de ratio qualité/compression : JPEG Q=30 donne 35.9 dB à 4.1 MB (ratio 24:1), 
+            tandis que CINR 1M float16 donne ~29 dB à 2.1 MB (ratio 48:1).
+          </p>
+          <p>
+            <strong>Conclusion :</strong> Bien que les INR offrent une représentation continue (zoom sans pyramide), 
+            elles ne sont pas encore compétitives face à JPEG pour le stockage de WSI à grande échelle.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
