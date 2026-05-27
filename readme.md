@@ -34,15 +34,14 @@ de plusieurs gigaoctets.
 - Implémentation d'un pipeline proche de **CINR**. Pour commencer, je vais essayer sur une image, l'obj est le suivant, prendre un fichier .svs, entrainer un modèle de reseau de neurone (comme CINR) afin de overfit le modèle sur une image pour qu'il puisse la reproduire à partir des poids du modèle. Commencement de teste d'entrainement sur le supercalculateur.
 
 **Semaine 4**:
-- Terminer implémentation du **CINR** au complet sur au moins un svs complet, pour présentation.
-- Convertir globalement une fichier svs, et non juste des tuiles d'images (au moins une pour chaque codec)
+- Terminer implémentation du **CINR** puis tester sur une petite image
 - Présentation slide + début rapport
 - Exploration de nouvelles méthode de conversions vers SVG
 
 **Semaine 5** (en cours):
-- Analyser les fichier DICOM du labo (nv de compression, etc..)
+- Analyser les fichier DICOM du labo (nv de compression, etc..) (FAIT)
 - MRXS (comparer avec le svs/dicom)
-- CINR sur un plus grand fichier
+- CINR sur un plus grand fichier (EN COURS)
 - Tester les nouvelles piste de svg
 
 
