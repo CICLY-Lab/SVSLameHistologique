@@ -9,13 +9,6 @@ Les Whole Slide Images (WSI) utilisées en anatomopathologie numérique atteigne
 des résolutions extrêmes, générant des fichiers 
 de plusieurs gigaoctets. 
 
-## Objectifs du stage
-1. Analyser les formats et propriétés des images WSI (svs/dicom)
-2. Benchmarker les codecs de compression classiques (JPEG, JPEG2000, JPEG XL, etc.)
-3. Concevoir une méthode de compression adaptative aux caractéristiques des lames
-4. Évaluer l'impact qualitatif des compressions sur le diagnostic
-5. Implémenter un modèle inspiré de CLERIC / CINR ?
-
 ### Carnet de bords à la semaine (mise à jours chaque fin de semaine):
 
 **Semaine 1**:
@@ -45,10 +38,20 @@ de plusieurs gigaoctets.
 - Tester les nouvelles piste de svg
 
 
+### Travail effectué
+
+- État de l'art: [lien SOTA](rapport_etat_art.md) 
+- Analyse fichier SVS et première expérimentation (JPEG, WebP, JPEG2K, JPEG XL, AVIF): [lien benchmark](expe_compression_classique/01_analyse_et_premiere_expe.ipynb)
+- Benchmark comparatif sur une dataset de patch 256x256 (variation du JPEG): [lien benchmark](expe_compression_classique/02_benchmark_compression_dataset.ipynb)
+- Benchmark comparatif sur une dataset de patch 2048×2048 (JPEG, WebP, JPEG2K, JPEG XL, AVIF): [lien benchmark](expe_compression_classique/benchmarkJPEG_WEBP_JPEG2000.ipynb)
+- Benchmark SVG vectoriel avec VTracer: [lien benchmark](expe_compression_classique/test_format_svg.ipynb)
+- Reproduction du papier CINR (Lee et al., MICCAI 2024) sur Apple Silicon (MPS). Modèle : Fourier features + SineCNN sur un patch 256×256: [lien vers demo CINR](cinr-repro/notebooks/01_demo_tile.ipynb)
+
 ### Données utilisées
 - **91 lames SVS TCGA** 
 - Données traitées: 
     - Patches d'entraînement : ~30 000 tuiles 256×256 extraites des zones tissulaires
-    - voir sur mon compte HF: [lien du dataset](https://huggingface.co/datasets/nathbns/SVS-TCGA-BR)
+    - Patches d'entraînement : 500 tuiles 2048x2048 extraites des zones tissulaires
+    - voir sur mon compte HF: [lien des dataset](https://huggingface.co/datasets/nathbns/)
 
 ---
