@@ -2,9 +2,10 @@
 1. https://www.johnsnowlabs.com/what-to-know-before-de-identifying-whole-slide-images-wsi/
 2. https://dicom.nema.org/dicom/dicomwsi/
 3. https://dicom.nema.org/medical/dicom/current/output/chtml/part05/chapter_9.html
-4. https://arxiv.org/pdf/2503.18074 (meilleur ressource pour l'instant)
+4. https://arxiv.org/pdf/2503.18074 
 5. https://arxiv.org/html/2503.23862v1
 6. https://pmc.ncbi.nlm.nih.gov/articles/PMC8525863/
+7. https://github.com/JiangWeibeta/MLIC
 
 ## Liens gh
 1. https://github.com/John-P/wsic
