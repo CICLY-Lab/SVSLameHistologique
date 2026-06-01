@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Benchmark de compression de lames histopathologiques — JPEG, WebP, JPEG2000 & SVG</title>
+  <title>Benchmark de compression de lames histopathologiques — JPEG, WebP, JPEG2000, SVG & Apprentissage Profond</title>
 
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -97,7 +97,9 @@
             au PNG original est indiquée pour chaque format.
           </p>
         </div>
-        <img src="./static/images/summary.png" style="max-width: 70%; height: auto; margin-bottom: 20px;">
+        <figure class="image zoomable" style="max-width: 70%; margin: 0 auto 20px auto;">
+          <img src="./static/images/summary.png" style="width: 100%; height: auto;">
+        </figure>
       </div>
     </div>
     <!--/ Abstract. -->
@@ -116,20 +118,52 @@
             des tuiles de taille fixe (2048×2048 pixels) des zones tissulaires.
           </p>
         </div>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/tuile_exemple.png" alt="Exemple de tuile histopathologique">
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="columns is-multiline is-centered">
+          <div class="column is-one-third">
+            <figure class="image zoomable">
+              <img src="./static/images/sample_000.png" alt="Sample 000">
             </figure>
-            <p class="has-text-centered"><em>Exemple d'une tuile 2048×2048 extraite d'une lame WSI</em></p>
+            <p class="has-text-centered"><em>Sample 000</em></p>
           </div>
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/file_overview.png" alt="Vue d'ensemble de la structure des fichiers">
+          <div class="column is-one-third">
+            <figure class="image zoomable">
+              <img src="./static/images/sample_001.png" alt="Sample 001">
             </figure>
-            <p class="has-text-centered"><em>Structure typique d'un fichier SVS</em></p>
+            <p class="has-text-centered"><em>Sample 001</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image zoomable">
+              <img src="./static/images/sample_002.png" alt="Sample 002">
+            </figure>
+            <p class="has-text-centered"><em>Sample 002</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image zoomable">
+              <img src="./static/images/sample_003.png" alt="Sample 003">
+            </figure>
+            <p class="has-text-centered"><em>Sample 003</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image zoomable">
+              <img src="./static/images/sample_004.png" alt="Sample 004">
+            </figure>
+            <p class="has-text-centered"><em>Sample 004</em></p>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image zoomable">
+              <img src="./static/images/sample_005.png" alt="Sample 005">
+            </figure>
+            <p class="has-text-centered"><em>Sample 005</em></p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
     </div>
   </div>
@@ -180,7 +214,9 @@
       <h2 class="title is-3 has-text-centered">Méthodes de compression</h2>
       <hr>
       <h3 class="title">Compression classique : JPEG, WebP, JPEG2000</h3>
-      <img src="./static/images/bench_01.png">
+      <figure class="image zoomable" style="margin-bottom: 1.5rem;">
+        <img src="./static/images/bench_01.png">
+      </figure>
       <p>
         JPEG est le standard historique de compression d'image, basé sur la DCT (Discrete Cosine Transform) avec quantification des coefficients. WebP, développé par Google, combine compression intra-frame (VP8) et prédiction pour offrir de meilleurs ratios. JPEG2000 utilise la transformée en ondelettes (DWT) pour une compression multi-résolution plus efficace, particulièrement adaptée aux grandes images comme les WSI.
       </p>
@@ -191,22 +227,21 @@
       <hr>
       <br>
 
-      <div class="columns is-centered" style="margin-bottom: 5%;">
+      <div class="columns is-centered" style="">
         <div style="width: 40% " class="column">
-          <img src="./static/images/svg_12.png">
-
-        </div>
-
-        <div class="column" style="width: 60%; vertical-align; middle;">
-          <br>
           <h3 class="title is-4">Approche vectorielle : SVG avec VTracer</h3>
-          <p>VTracer convertit les images matricielles en SVG vectoriel pur (chemins &lt;path&gt;) en détectant automatiquement les contours et couleurs. L'objectif est d'évaluer si la représentation vectorielle peut compresser efficacement les lames histopathologiques.</p>
-          <br>
-          <h3 class="title is-4">Résultat SVG :</h3>
-          <p>Sur les images histopathologiques riches en textures, le SVG est en moyenne <strong>10× plus volumineux</strong> que le PNG original. La vectorisation n'est donc pas adaptée à ce type d'imagerie médicale, car la complexité texturale empêche une représentation économe en primitives vectorielles.</p>
+          <figure class="image zoomable">
+            <img src="./static/images/svg_12.png">
+          </figure>
         </div>
       </div>
-
+      <div class="column" style="vertical-align; middle; margin-bottom: 2rem;">
+        <br>
+        <p>VTracer convertit les images matricielles en SVG vectoriel pur (chemins &lt;path&gt;) en détectant automatiquement les contours et couleurs. L'objectif est d'évaluer si la représentation vectorielle peut compresser efficacement les lames histopathologiques.</p>
+        <br>
+        <h3 class="title is-4">Résultat SVG :</h3>
+        <p>Sur les images histopathologiques riches en textures, le SVG est en moyenne <strong>10× plus volumineux</strong> que le PNG original. La vectorisation n'est donc pas adaptée à ce type d'imagerie médicale, car la complexité texturale empêche une représentation économe en primitives vectorielles.</p>
+      </div>
 
 
         </div>
@@ -221,113 +256,20 @@
       <h2 class="title is-3 has-text-centered">Résultats du benchmark</h2>
       <hr>
       <h3 class="title is-4">PSNR par format et niveau de qualité</h3>
-      <img src="./static/images/bench_02.png">
+      <figure class="image zoomable" style="margin-bottom: 1.5rem;">
+        <img src="./static/images/bench_02.png">
+      </figure>
 
       <h3 class="title is-4">SSIM par format et niveau de qualité</h3>
-      <img src="./static/images/bench_03.png">
+      <figure class="image zoomable" style="margin-bottom: 1.5rem;">
+        <img src="./static/images/bench_03.png">
+      </figure>
 
       <h3 class="title is-4">Taille des fichiers compressés</h3>
-      <img src="./static/images/bench_04.png">
-
-      <h3 class="title is-4">Ratios de compression</h3>
-      <div class="columns is-centered">
-        <div class="column is-half">
-          <img src="./static/images/ratio_pie.png" alt="Répartition des ratios de compression">
-          <p class="has-text-centered"><em>Répartition des ratios de compression par format</em></p>
+      <figure class="image zoomable" style="margin-bottom: 1.5rem;">
+        <img src="./static/images/bench_04.png">
+      </figure>
         </div>
-        <div class="column is-half">
-          <img src="./static/images/ratio_bar.png" alt="Comparaison des ratios de compression">
-          <p class="has-text-centered"><em>Comparaison des ratios de compression</em></p>
-        </div>
-      </div>
-        </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Artefacts de compression</h2>
-        <div class="content has-text-justified">
-          <p>
-            Les différents formats de compression introduisent des artefacts visuels caractéristiques.
-            JPEG produit des effets de blocs (blocking artifacts) et du flou autour des contours,
-            tandis que WebP et JPEG2000 préservent mieux les détails fins grâce à leurs algorithmes
-            plus sophistiqués. La détection de ces artefacts est cruciale pour l'analyse diagnostique.
-          </p>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/artefacts_compression.png" alt="Artefacts de compression">
-            </figure>
-            <p class="has-text-centered"><em>Visualisation des artefacts de compression</em></p>
-          </div>
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/zoom_artefacts.png" alt="Zoom sur les artefacts">
-            </figure>
-            <p class="has-text-centered"><em>Zoom sur les artefacts à fort taux de compression</em></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Échantillons du benchmark</h2>
-        <div class="content has-text-justified">
-          <p>
-            Exemples de tuiles 2048×2048 utilisées dans le benchmark SVS-TCGA-2048. Ces images
-            proviennent de lames TCGA (The Cancer Genome Atlas) et couvrent différents types de
-            tissus et colorations, permettant une évaluation robuste des algorithmes de compression.
-          </p>
-        </div>
-        <div class="columns is-multiline is-centered">
-          <div class="column is-one-third">
-            <figure class="image">
-              <img src="./static/images/sample_000.png" alt="Sample 000">
-            </figure>
-            <p class="has-text-centered"><em>Sample 000</em></p>
-          </div>
-          <div class="column is-one-third">
-            <figure class="image">
-              <img src="./static/images/sample_001.png" alt="Sample 001">
-            </figure>
-            <p class="has-text-centered"><em>Sample 001</em></p>
-          </div>
-          <div class="column is-one-third">
-            <figure class="image">
-              <img src="./static/images/sample_002.png" alt="Sample 002">
-            </figure>
-            <p class="has-text-centered"><em>Sample 002</em></p>
-          </div>
-          <div class="column is-one-third">
-            <figure class="image">
-              <img src="./static/images/sample_003.png" alt="Sample 003">
-            </figure>
-            <p class="has-text-centered"><em>Sample 003</em></p>
-          </div>
-          <div class="column is-one-third">
-            <figure class="image">
-              <img src="./static/images/sample_004.png" alt="Sample 004">
-            </figure>
-            <p class="has-text-centered"><em>Sample 004</em></p>
-          </div>
-          <div class="column is-one-third">
-            <figure class="image">
-              <img src="./static/images/sample_005.png" alt="Sample 005">
-            </figure>
-            <p class="has-text-centered"><em>Sample 005</em></p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -400,50 +342,30 @@
         </div>
         
         <h3 class="title is-4">Démonstration sur patch 256×256</h3>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/cinr_demo_00.png" alt="Patch original CINR">
-            </figure>
-            <p class="has-text-centered"><em>Patch original 256×256 (dataset SVS-TCGA-BR)</em></p>
-          </div>
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/cinr_demo_01.png" alt="Reconstruction CINR">
-            </figure>
-            <p class="has-text-centered"><em>Original vs Reconstruction (PSNR: 33.8 dB)</em></p>
+        <div class="comp-grid">
+          <div class="comp-card zoomable">
+            <img src="./static/images/cinr_demo_01.png" alt="Reconstruction CINR">
+            <div class="comp-card-label">Reconstruction CINR — <strong>PSNR: 33.8 dB</strong></div>
           </div>
         </div>
 
-        <h3 class="title is-4">Test sur lame SVS locale (1024×1024)</h3>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/cinr_visu_00.png" alt="Tuile lame2.svs">
-            </figure>
-            <p class="has-text-centered"><em>Tuile extraite de lame2.svs (1024×1024)</em></p>
-          </div>
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/cinr_visu_01.png" alt="Reconstruction lame2.svs">
-            </figure>
-            <p class="has-text-centered"><em>Reconstruction CINR (PSNR: 24.7 dB)</em></p>
+        <h3 class="title is-4">Démonstration sur patch 1024×1024</h3>
+        <div class="comp-grid">
+          <div class="comp-card zoomable">
+            <img src="./static/images/cinr_visu_01.png" alt="Reconstruction lame2.svs">
+            <div class="comp-card-label">Reconstruction CINR — <strong>PSNR: 24.7 dB</strong></div>
           </div>
         </div>
 
         <h3 class="title is-4">Analyse de performance</h3>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/cinr_visu_02.png" alt="Courbe convergence">
-            </figure>
-            <p class="has-text-centered"><em>Courbe de convergence CINR</em></p>
+        <div class="comp-grid">
+          <div class="comp-card zoomable">
+            <img src="./static/images/cinr_visu_02.png" alt="Courbe convergence">
+            <div class="comp-card-label">Courbe de convergence CINR</div>
           </div>
-          <div class="column is-half">
-            <figure class="image">
-              <img src="./static/images/cinr_demo_03.png" alt="Rate-Distortion">
-            </figure>
-            <p class="has-text-centered"><em>Courbe Rate-Distortion : JPEG vs CINR</em></p>
+          <div class="comp-card zoomable">
+            <img src="./static/images/cinr_demo_03.png" alt="Rate-Distortion">
+            <div class="comp-card-label">Courbe Rate-Distortion : JPEG vs CINR</div>
           </div>
         </div>
 
@@ -463,6 +385,208 @@
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Compression Neuronale — Learned Image Compression</h2>
+        <div class="content has-text-justified">
+          <p>
+            Une troisième approche explore les <strong>méthodes de compression neuronale</strong> (learned image compression),
+            qui utilisent des autoencodeurs pré-entraînés pour compresser les images. Contrairement aux méthodes
+            classiques (JPEG, WebP) ou aux INR (CINR) qui encodent une image dans des poids de réseau, ces modèles
+            apprennent un <strong>codec universel</strong> partagé entre toutes les images.
+          </p>
+          <p>
+            Deux modèles de l'état de l'art sont testés via la bibliothèque <strong>CompressAI</strong> :
+            <strong>bmshj2018_factorized</strong> (autoencodeur simple, ~4M paramètres) et
+            <strong>mbt2018_mean</strong> (avec hyperprior, ~8M paramètres).
+            Les tests utilisent les <strong>poids pré-entraînés</strong> sur des images naturelles (DIV2K/CLIC),
+            appliqués en inférence sur une région de <strong>5000×5000 pixels</strong> extraite
+            d'une lame histopathologique. Inférence réalisée sur <strong>Apple M4 Pro (MPS)</strong>.
+          </p>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: 1.5rem; padding: 1rem 1.5rem; border-radius: 4px;">
+          <h3 class="title is-5" style="color: #3273dc;">Qu'est-ce que la compression neuronale ?</h3>
+          <p>
+            Contrairement aux codecs classiques (JPEG, WebP) qui appliquent des transformations mathématiques
+            fixes (DCT, ondelettes), la <strong>compression neuronale</strong> utilise des réseaux de neurones
+            profonds entraînés à compresser n'importe quelle image. L'idée clé est un <strong>autoencodeur</strong> :
+          </p>
+          <ul>
+            <li>Un <strong>encodeur</strong> (réseau convolutif) transforme l'image en un espace latent compressé,</li>
+            <li>Un <strong>décodeur</strong> (réseau convolutif symétrique) reconstruit l'image à partir de cet espace latent,</li>
+            <li>Un <strong>modèle entropique</strong> estime la distribution de probabilité des valeurs latentes pour le codage arithmétique.</li>
+          </ul>
+          <p>
+            L'avantage est que chaque composant apprend automatiquement les structures visuelles pertinentes
+            à partir des données, au lieu d'utiliser des transformations prédéfinies. Le compromis qualité/taille
+            est contrôlé par le paramètre <strong>λ (lambda)</strong> pendant l'entraînement, qui pondère la 
+            distortion (MSE) contre le débit (BPP). Plus λ est grand, plus la qualité est élevée et le fichier volumineux.
+          </p>
+          <p>
+            Les deux modèles testés diffèrent par leur architecture : <strong>bmshj2018_factorized</strong> utilise
+            un modèle entropique simple (factorisé, sans dépendances spatiales), tandis que <strong>mbt2018_mean</strong>
+            ajoute un <strong>hyperprior</strong> — un second autoencodeur qui capture les corrélations spatiales
+            du latent pour réduire encore le débit.
+          </p>
+        </div>
+
+        <!-- Tableau des résultats -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Résultats complets (q=1 à 8)</h3>
+        <div class="content">
+          <table class="table is-striped is-hoverable is-narrow" style="margin: 0 auto; font-size: 0.9rem;">
+            <thead>
+              <tr>
+                <th>Méthode</th>
+                <th>Qualité</th>
+                <th>BPP ↓</th>
+                <th>PSNR ↑</th>
+                <th>Taille (région 5000²)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=10</td><td>0.3299</td><td>28.8 dB</td><td>1 007 KB</td></tr>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=30</td><td>0.6426</td><td>33.3 dB</td><td>1 961 KB</td></tr>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=50</td><td>0.8616</td><td>35.2 dB</td><td>2 629 KB</td></tr>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=70</td><td>1.1428</td><td>36.9 dB</td><td>3 487 KB</td></tr>
+              <tr style="background: #f0f4ff; border-bottom: 2px solid #ccc;"><td><strong>JPEG</strong></td><td>Q=90</td><td>2.0687</td><td>40.2 dB</td><td>6 313 KB</td></tr>
+
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=1</td><td>0.1441</td><td>28.7 dB</td><td>440 KB</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=2</td><td>0.2119</td><td>30.3 dB</td><td>647 KB</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=3</td><td>0.3027</td><td>31.9 dB</td><td>924 KB</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=4</td><td>0.4298</td><td>33.7 dB</td><td>1 312 KB</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=5</td><td>0.5908</td><td>35.5 dB</td><td>1 803 KB</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=6</td><td>0.7908</td><td>37.2 dB</td><td>2 413 KB</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=7</td><td>1.0649</td><td>39.0 dB</td><td>3 250 KB</td></tr>
+              <tr style="background: #fff8f0; border-bottom: 2px solid #ccc;"><td>bmshj2018_factorized</td><td>q=8</td><td>1.4243</td><td>40.8 dB</td><td>4 347 KB</td></tr>
+
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=1</td><td>0.1234</td><td>28.9 dB</td><td>377 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=2</td><td>0.1832</td><td>30.6 dB</td><td>559 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=3</td><td>0.2646</td><td>32.3 dB</td><td>808 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=4</td><td>0.3708</td><td>34.0 dB</td><td>1 132 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=5</td><td>0.5107</td><td>35.8 dB</td><td>1 559 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=6</td><td>0.6850</td><td>37.7 dB</td><td>2 091 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=7</td><td>0.9201</td><td>39.5 dB</td><td>2 808 KB</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=8</td><td>1.2390</td><td>41.4 dB</td><td>3 781 KB</td></tr>
+            </tbody>
+          </table>
+          <p class="has-text-centered"><em>BPP = Bits par pixel. Taille estimée = BPP × 5000² / 8 bytes. Inférence sur Apple M4 Pro (MPS).</em></p>
+        </div>
+
+        <!-- Comparaison visuelle -->
+        <h3 class="title is-4" style="margin-top: 3rem;">Comparaison visuelle</h3>
+        <p style="margin-bottom: 1rem;"><em>Cliquez sur une image pour zoomer :</em></p>
+
+        <div style="margin-bottom: 3rem;">
+          <p class="has-text-centered" style="margin-bottom: 0.6rem;"><strong>Original vs JPEG Q=30</strong></p>
+          <div class="comp-grid">
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/region_5000_original.jpg" alt="Original">
+              <div class="comp-card-label">Région originale 5000×5000</div>
+            </div>
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/region_5000_JPEG_Q30.jpg" alt="JPEG Q=30">
+              <div class="comp-card-label">JPEG Q=30 — <strong>PSNR: 33.3 dB</strong> (1 961 KB)</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <p class="has-text-centered" style="margin-bottom: 0.6rem;"><strong>JPEG Q=30 vs bmshj2018_factorized q=3</strong></p>
+          <div class="comp-grid">
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/region_5000_JPEG_Q30.jpg" alt="JPEG Q=30">
+              <div class="comp-card-label">JPEG Q=30 — PSNR: 33.3 dB (1 961 KB)</div>
+            </div>
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/bmshj2018_q3.png" alt="bmshj2018 q=3">
+              <div class="comp-card-label">bmshj2018_factorized q=3 — <strong>PSNR: 31.9 dB</strong> (924 KB)</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <p class="has-text-centered" style="margin-bottom: 0.6rem;"><strong>bmshj2018_factorized q=3 vs mbt2018_mean q=3</strong></p>
+          <div class="comp-grid">
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/bmshj2018_q3.png" alt="bmshj2018 q=3">
+              <div class="comp-card-label">bmshj2018_factorized q=3 — PSNR: 31.9 dB (924 KB)</div>
+            </div>
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/mbt2018_q3.png" alt="mbt2018 q=3">
+              <div class="comp-card-label">mbt2018_mean q=3 — <strong>PSNR: 32.3 dB</strong> (808 KB)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Courbe Rate-Distortion -->
+        <h3 class="title is-4" style="margin-top: 3rem;">Courbe Rate-Distortion</h3>
+        <figure class="image zoomable" style="max-width: 750px; margin: 0 auto;">
+          <img src="./static/images/learned_compression/rate_distortion_curve.png" alt="Courbe Rate-Distortion" style="width: 100%;">
+        </figure>
+        <p class="has-text-centered" style="margin-top: 0.5rem;"><em>BPP vs PSNR — JPEG, bmshj2018_factorized, mbt2018_mean (q=1→8)</em></p>
+
+        <!-- Analyse -->
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <h3 class="title is-4">Analyse</h3>
+          <p>
+            <strong>mbt2018_mean domine sur toute la gamme :</strong>
+          </p>
+          <ul>
+            <li>À <strong>PSNR ~33 dB</strong>, mbt2018_mean (q=4) = 1 132 KB vs JPEG Q=30 = 1 961 KB → <strong>42% plus petit</strong></li>
+            <li>À <strong>PSNR ~35 dB</strong>, mbt2018_mean (q=5) = 1 559 KB vs JPEG Q=50 = 2 629 KB → <strong>41% plus petit</strong></li>
+            <li>mbt2018_mean q=1 (377 KB) atteint la <strong>même qualité que JPEG Q=10</strong> (1 007 KB) → <strong>2.7× plus petit</strong></li>
+          </ul>
+
+          <p>
+            <strong>bmshj2018_factorized vs mbt2018_mean :</strong>
+          </p>
+          <ul>
+            <li>mbt2018_mean est systématiquement <strong>plus efficace</strong> que bmshj2018_factorized à qualité égale</li>
+            <li>À q=3 : mbt2018 = 808 KB (32.3 dB) vs bmshj = 924 KB (31.9 dB) → <strong>-13% de taille pour +0.4 dB</strong></li>
+            <li>À q=5 : mbt2018 = 1 559 KB (35.8 dB) vs bmshj = 1 803 KB (35.5 dB) → <strong>-14% de taille</strong></li>
+            <li>Cet écart s'explique par l'<strong>hyperprior</strong> de mbt2018_mean qui modélise mieux les dépendances spatiales</li>
+          </ul>
+
+          <p>
+            <strong>Artefacts visuels :</strong>
+          </p>
+          <ul>
+            <li><strong>JPEG</strong> : artefacts de blocs (8×8 DCT) visibles à basse qualité, perte de détails fins</li>
+            <li><strong>bmshj2018_factorized</strong> : flou uniforme, pas de blocs mais perte de texture à basse qualité</li>
+            <li><strong>mbt2018_mean</strong> : le plus fidèle, préserve mieux les structures cellulaires grâce à l'hyperprior</li>
+          </ul>
+
+          <p>
+            <strong>Avantages et limitations :</strong>
+          </p>
+          <table class="table is-striped" style="margin: 0 auto;">
+            <thead><tr><th></th><th>JPEG</th><th>bmshj2018_factorized</th><th>mbt2018_mean</th></tr></thead>
+            <tbody>
+              <tr><td>Ratio qualité/taille</td><td>Référence</td><td>Bon</td><td><strong>Excellent</strong></td></tr>
+              <tr><td>Vitesse d'encodage (5000²)</td><td><strong>20 ms</strong></td><td>~3-63 s (MPS)</td><td>~63-128 s (MPS)</td></tr>
+              <tr><td>Taille modèle</td><td>—</td><td>~4M params</td><td>~8M params</td></tr>
+              <tr><td>Standard</td><td><strong>Universel</strong></td><td>Recherche</td><td>Recherche</td></tr>
+              <tr><td>GPU nécessaire</td><td><strong>Non</strong></td><td>Oui (ou CPU lent)</td><td>Oui (ou CPU lent)</td></tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top: 1.5rem;">
+            <strong>Conclusion :</strong> <strong>mbt2018_mean</strong> offre le meilleur ratio qualité/taille parmi toutes les méthodes testées,
+            surpassant JPEG de ~40% à PSNR équivalent. <strong>bmshj2018_factorized</strong> est un bon compromis
+            vitesse/qualité (2-3× plus rapide que mbt2018). Un <strong>fine-tuning</strong> des modèles sur des images
+            histopathologiques pourrait encore améliorer les performances (+2-5 dB estimés).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">

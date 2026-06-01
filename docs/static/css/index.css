@@ -2,7 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -17,7 +16,6 @@ body {
   font-variant: small-caps;
 }
 
-
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
@@ -27,13 +25,11 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
-
 .publication-title {
 }
 
 .publication-banner {
   max-height: parent;
-
 }
 
 .publication-banner video {
@@ -94,7 +90,6 @@ body {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
-
     overflow: hidden;
     border-radius: 10px !important;
 }
@@ -127,7 +122,6 @@ body {
   margin: 0;
 }
 
-
 .interpolation-panel {
   background: #f5f5f5;
   border-radius: 10px;
@@ -154,4 +148,172 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+
+/* =============================================
+   GRILLE DE COMPARAISON CÔTE À CÔTE
+   ============================================= */
+
+.comp-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.comp-grid .comp-card {
+  flex: 1;
+  max-width: 512px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.comp-grid .comp-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.comp-grid .comp-card .comp-card-label {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.comp-grid .comp-card .comp-card-label strong {
+  color: #363636;
+}
+
+
+/* =============================================
+   LIGHTBOX ZOOM
+   ============================================= */
+
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: lb-fade-in 0.2s ease;
+}
+
+@keyframes lb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lb-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-viewport.grabbing {
+  cursor: grabbing;
+}
+
+.lb-viewport img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  transform-origin: 0 0;
+  transition: transform 0.08s ease-out;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.lb-controls {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10001;
+  display: flex;
+  gap: 8px;
+}
+
+.lb-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s;
+}
+
+.lb-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.lb-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  font-family: 'Google Sans', sans-serif;
+  pointer-events: none;
+  z-index: 10001;
+}
+
+
+/* =============================================
+   INDICATEUR DE ZOOM SUR LES IMAGES
+   ============================================= */
+
+.zoomable {
+  cursor: zoom-in;
+  transition: opacity 0.2s;
+}
+
+figure.image.zoomable {
+  position: relative;
+}
+
+figure.image.zoomable::after {
+  content: '\2295';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+figure.image.zoomable:hover::after {
+  opacity: 1;
 }
