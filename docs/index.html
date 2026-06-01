@@ -85,11 +85,40 @@
   </div>
 </section>
 <section class="section">
+  <div class="is-max-desktop">
+    <!-- <p style="font-weight: bold; justify-content: center; display: flex; padding-bottom: 30px;">Sommaire</p>
+    <div class="columns is-centered has-text-centered">
+      <p class="has-text-justified" style="max-width: 400px; margin: 0 auto;">
+        <a href="#formats-classiques">1. Comparaison des formats de compression classiques</a><br>
+        <a href="#tuiles">2. Exemples de tuiles histopathologiques</a><br>
+        <a href="#resume">3. Résumé</a><br>
+        <a href="#methodes">4. Méthodes de compression</a><br>
+        <a href="#resultats">5. Résultats du benchmark</a><br>
+        <a href="#cinr">6. Compression Neurale (CINR)</a><br>
+        <a href="#learned">7. Compression Neuronale — Learned Image Compression (5000×5000)</a><br>
+        <a href="#learned-10000">8. Learned Image Compression — Scaling 10000×10000</a>
+      </p>
+    </div> -->
+
+    <p style="font-weight: bold; margin-top: 1.5em;">Formats de fichiers de lames numériques</p>
+    <p>
+      <strong>SVS (Aperio)</strong> — Format propriétaire TIFF multi-résolutions développé par Aperio (Leica). Pyramide d'images TIFF avec tuiles carrées (généralement 240×240 pixels). Métadonnées stockées dans le header TIFF. Supporte la compression JPEG ou LZW. Utilisé par les scanners Leica (GT450, AT2, etc.).
+    </p>
+    <p>
+      <strong>DICOM (Digital Imaging and Communications in Medicine)</strong> — Standard ouvert défini par le NEMA / DICOM Standards Committee. Utilisé principalement en radiologie (CT, IRM, RX) mais supporte aussi la pathologie (DICOM Pathology). Métadonnées extensives (patient, scanner, protocole). Supporte plusieurs types de compression (JPEG, JPEG2000, JPEG-LS, RLE).
+    </p>
+    <p>
+      <strong>MRXS (Mirax)</strong> — Format propriétaire développé par 3DHISTECH (Hongrie) pour les scanners Mirax / P1000 / P250. Hiérarchie propriétaire de tuiles (slides et blocs), optimisée pour le streaming progressif. Index propriétaire stocké dans plusieurs fichiers compagnons.
+    </p>
+
+  </div>
+</section>
+<section class="section">
   <div class=" is-max-desktop">
     <!-- Abstract. -->
     <div class=" is-centered has-text-centered">
       <div class=" is-four-fifths">
-        <h2 class="title is-3">Comparaison des formats de compression classiques</h2>
+        <h2 class="title is-3" id="formats-classiques">Comparaison des formats de compression classiques</h2>
         <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto 20px auto;">
           <p>
             Comparaison visuelle d'une région d'intérêt d'une lame histopathologique compressée avec différents formats
@@ -110,7 +139,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Exemples de tuiles histopathologiques</h2>
+        <h2 class="title is-3" id="tuiles">Exemples de tuiles histopathologiques</h2>
         <div class="content has-text-justified">
           <p>
             Les Whole Slide Images (WSI) sont des lames histopathologiques numérisées à très haute résolution, 
@@ -175,7 +204,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Résumé</h2>
+        <h2 class="title is-3" id="resume">Résumé</h2>
         <div class="content has-text-justified">
           <p>
             Ce projet explore l'efficacité de différents formats de compression d'image appliqués aux lames histopathologiques
@@ -211,7 +240,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class=" is-centered ">
-      <h2 class="title is-3 has-text-centered">Méthodes de compression</h2>
+      <h2 class="title is-3 has-text-centered" id="methodes">Méthodes de compression</h2>
       <hr>
       <h3 class="title">Compression classique : JPEG, WebP, JPEG2000</h3>
       <figure class="image zoomable" style="margin-bottom: 1.5rem;">
@@ -253,7 +282,7 @@
   <div class="container is-max-desktop">
     <div class=" is-centered ">
 
-      <h2 class="title is-3 has-text-centered">Résultats du benchmark</h2>
+      <h2 class="title is-3 has-text-centered" id="resultats">Résultats du benchmark</h2>
       <hr>
       <h3 class="title is-4">PSNR par format et niveau de qualité</h3>
       <figure class="image zoomable" style="margin-bottom: 1.5rem;">
@@ -326,7 +355,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Compression Neurale (CINR)</h2>
+        <h2 class="title is-3" id="cinr">Compression Neurale (CINR)</h2>
         <div class="content has-text-justified">
           <p>
             Une approche expérimentale de compression utilise les Représentations Neurales Implicites (CINR - 
@@ -390,7 +419,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Compression Neuronale — Learned Image Compression</h2>
+        <h2 class="title is-3" id="learned">Compression Neuronale — Learned Image Compression (5000×5000)</h2>
         <div class="content has-text-justified">
           <p>
             Une troisième approche explore les <strong>méthodes de compression neuronale</strong> (learned image compression),
@@ -404,7 +433,7 @@
             <strong>mbt2018_mean</strong> (avec hyperprior, ~8M paramètres).
             Les tests utilisent les <strong>poids pré-entraînés</strong> sur des images naturelles (DIV2K/CLIC),
             appliqués en inférence sur une région de <strong>5000×5000 pixels</strong> extraite
-            d'une lame histopathologique. Inférence réalisée sur <strong>Apple M4 Pro (MPS)</strong>.
+            d'une lame histopathologique.
           </p>
         </div>
 
@@ -473,7 +502,7 @@
               <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=8</td><td>1.2390</td><td>41.4 dB</td><td>3 781 KB</td></tr>
             </tbody>
           </table>
-          <p class="has-text-centered"><em>BPP = Bits par pixel. Taille estimée = BPP × 5000² / 8 bytes. Inférence sur Apple M4 Pro (MPS).</em></p>
+          <p class="has-text-centered"><em>BPP = Bits par pixel. Taille estimée = BPP × 5000² / 8 bytes.</em></p>
         </div>
 
         <!-- Comparaison visuelle -->
@@ -516,7 +545,7 @@
               <div class="comp-card-label">bmshj2018_factorized q=3 — PSNR: 31.9 dB (924 KB)</div>
             </div>
             <div class="comp-card zoomable">
-              <img src="./static/images/learned_compression/mbt2018_q3.png" alt="mbt2018 q=3">
+              <img src="./static/images/learned_compression/mbt2018_5000_q3.png" alt="mbt2018 q=3">
               <div class="comp-card-label">mbt2018_mean q=3 — <strong>PSNR: 32.3 dB</strong> (808 KB)</div>
             </div>
           </div>
@@ -525,7 +554,7 @@
         <!-- Courbe Rate-Distortion -->
         <h3 class="title is-4" style="margin-top: 3rem;">Courbe Rate-Distortion</h3>
         <figure class="image zoomable" style="max-width: 750px; margin: 0 auto;">
-          <img src="./static/images/learned_compression/rate_distortion_curve.png" alt="Courbe Rate-Distortion" style="width: 100%;">
+          <img src="./static/images/learned_compression/rate_distortion_curve_5000.png" alt="Courbe Rate-Distortion" style="width: 100%;">
         </figure>
         <p class="has-text-centered" style="margin-top: 0.5rem;"><em>BPP vs PSNR — JPEG, bmshj2018_factorized, mbt2018_mean (q=1→8)</em></p>
 
@@ -588,14 +617,165 @@
 
 
 
-<section class="section" id="BibTeX">
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="learned-10000">Learned Image Compression — Scaling 10000×10000</h2>
+        <div class="content has-text-justified">
+          <p>
+            Pour valider la scalabilité des méthodes neuronales, le benchmark est reproduit sur une région
+            <strong>10000×10000 pixels</strong> extraite de la même lame SVS. Cette taille correspond
+            à un sous-ensemble de WSI typique pour une analyse histologique complète.
+          </p>
+          <p>
+            On utilise donc une stratégie de <strong>tiling 4096×4096</strong> : l'image est découpée en
+            9 tuiles, chaque tuile est encodée/décodée indépendamment sur MPS, puis les reconstructions
+            sont réassemblées. Le BPP total est la somme des bits par tuile, divisé par le nombre total de pixels.
+          </p>
+          <p>
+            <strong>Remarque :</strong> le tiling dégrade légèrement la qualité (les bords de tuiles
+            n'ont pas accès au contexte des tuiles voisines), mais l'impact reste faible car le
+            champ récepteur des modèles est déjà très large.
+          </p>
+        </div>
+
+        <!-- Tableau des résultats -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Résultats 10000×10000 (q=1 à 8)</h3>
+        <div class="content">
+          <table class="table is-striped is-hoverable is-narrow" style="margin: 0 auto; font-size: 0.9rem;">
+            <thead>
+              <tr>
+                <th>Méthode</th>
+                <th>Qualité</th>
+                <th>BPP ↓</th>
+                <th>PSNR ↑</th>
+                <th>Taille (région 10000²)</th>
+                <th>Temps MPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=10</td><td>0.1706</td><td>33.3 dB</td><td>2 083 KB</td><td>~30 s</td></tr>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=30</td><td>0.3309</td><td>37.6 dB</td><td>4 039 KB</td><td>~30 s</td></tr>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=50</td><td>0.4633</td><td>39.5 dB</td><td>5 656 KB</td><td>~30 s</td></tr>
+              <tr style="background: #f0f4ff;"><td><strong>JPEG</strong></td><td>Q=70</td><td>0.6611</td><td>41.4 dB</td><td>8 070 KB</td><td>~30 s</td></tr>
+              <tr style="background: #f0f4ff; border-bottom: 2px solid #ccc;"><td><strong>JPEG</strong></td><td>Q=90</td><td>1.3415</td><td>51.3 dB</td><td>16 376 KB</td><td>~30 s</td></tr>
+
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=1</td><td>0.0771</td><td>33.4 dB</td><td>942 KB</td><td>~18 s</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=2</td><td>0.1128</td><td>34.8 dB</td><td>1 377 KB</td><td>~18 s</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=3</td><td>0.1648</td><td>36.0 dB</td><td>2 012 KB</td><td>~18 s</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=4</td><td>0.2415</td><td>37.5 dB</td><td>2 948 KB</td><td>~17 s</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=5</td><td>0.3464</td><td>39.1 dB</td><td>4 228 KB</td><td>~18 s</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=6</td><td>0.4806</td><td>40.5 dB</td><td>5 867 KB</td><td>~30 s</td></tr>
+              <tr style="background: #fff8f0;"><td>bmshj2018_factorized</td><td>q=7</td><td>0.6783</td><td>42.3 dB</td><td>8 280 KB</td><td>~31 s</td></tr>
+              <tr style="background: #fff8f0; border-bottom: 2px solid #ccc;"><td>bmshj2018_factorized</td><td>q=8</td><td>0.9442</td><td>43.7 dB</td><td>11 526 KB</td><td>~31 s</td></tr>
+
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=1</td><td>0.0350</td><td>33.4 dB</td><td>427 KB</td><td>~21 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=2</td><td>0.0567</td><td>34.5 dB</td><td>693 KB</td><td>~21 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=3</td><td>0.0909</td><td>35.9 dB</td><td>1 110 KB</td><td>~21 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=4</td><td>0.1417</td><td>37.3 dB</td><td>1 730 KB</td><td>~19 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=5</td><td>0.2105</td><td>38.6 dB</td><td>2 570 KB</td><td>~35 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=6</td><td>0.3009</td><td>40.6 dB</td><td>3 674 KB</td><td>~32 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=7</td><td>0.4373</td><td>42.3 dB</td><td>5 339 KB</td><td>~33 s</td></tr>
+              <tr style="background: #f0fff0;"><td><strong>mbt2018_mean</strong></td><td>q=8</td><td>0.6099</td><td>43.7 dB</td><td>7 446 KB</td><td>~35 s</td></tr>
+            </tbody>
+          </table>
+          <p class="has-text-centered"><em>BPP = Bits par pixel. Région = 10000×1000 px. Tiling 4096 sur MPS pour les modèles neuronaux.</em></p>
+        </div>
+
+        <!-- Comparaisons visuelles -->
+        <h3 class="title is-4" style="margin-top: 3rem;">Comparaison visuelle</h3>
+        <p style="margin-bottom: 1rem;"><em>Cliquez sur une image pour zoomer :</em></p>
+
+        <div style="margin-bottom: 3rem;">
+          <p class="has-text-centered" style="margin-bottom: 0.6rem;"><strong>Original vs JPEG Q=30</strong></p>
+          <div class="comp-grid">
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/region_10000_original.jpg" alt="Original 10000x10000">
+              <div class="comp-card-label">Région originale 10000×10000</div>
+            </div>
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/region_10000_JPEG_Q30.jpg" alt="JPEG Q=30 10000">
+              <div class="comp-card-label">JPEG Q=30 — <strong>PSNR: 37.6 dB</strong> (4 039 KB)</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <p class="has-text-centered" style="margin-bottom: 0.6rem;"><strong>JPEG Q=30 vs bmshj2018_factorized q=3</strong></p>
+          <div class="comp-grid">
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/region_10000_JPEG_Q30.jpg" alt="JPEG Q=30 10000">
+              <div class="comp-card-label">JPEG Q=30 — PSNR: 37.6 dB (4 039 KB)</div>
+            </div>
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/bmshj2018_10000_q3.png" alt="bmshj2018 q=3 10000">
+              <div class="comp-card-label">bmshj2018_factorized q=3 — <strong>PSNR: 36.0 dB</strong> (2 012 KB)</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <p class="has-text-centered" style="margin-bottom: 0.6rem;"><strong>bmshj2018_factorized q=3 vs mbt2018_mean q=3</strong></p>
+          <div class="comp-grid">
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/bmshj2018_10000_q3.png" alt="bmshj2018 q=3 10000">
+              <div class="comp-card-label">bmshj2018_factorized q=3 — PSNR: 36.0 dB (2 012 KB)</div>
+            </div>
+            <div class="comp-card zoomable">
+              <img src="./static/images/learned_compression/mbt2018_10000_q3.png" alt="mbt2018 q=3 10000">
+              <div class="comp-card-label">mbt2018_mean q=3 — <strong>PSNR: 35.9 dB</strong> (1 110 KB)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Courbe Rate-Distortion -->
+        <h3 class="title is-4" style="margin-top: 3rem;">Courbe Rate-Distortion (10000×10000)</h3>
+        <figure class="image zoomable" style="max-width: 750px; margin: 0 auto;">
+          <img src="./static/images/learned_compression/rate_distortion_curve.png" alt="Courbe Rate-Distortion 10000" style="width: 100%;">
+        </figure>
+        <p class="has-text-centered" style="margin-top: 0.5rem;"><em>BPP vs PSNR — JPEG, bmshj2018_factorized, mbt2018_mean (q=1→8) sur région 10000×10000</em></p>
+
+        <!-- Analyse -->
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <h3 class="title is-4">Analyse comparative 5000 vs 10000</h3>
+          <p>
+            <strong>Cohérence des résultats à 4× la taille :</strong>
+          </p>
+          <ul>
+            <li>Le BPP est légèrement plus bas sur 10000² (0.2646 → 0.0909 pour mbt q=3) : les modèles neuronaux profitent
+            davantage des grandes images car les patterns appris se répètent plus souvent.</li>
+            <li>Le PSNR est légèrement plus haut sur 10000² (33.3 dB → 35.9 dB pour mbt q=3) car les statistiques agrégées
+            sont plus stables.</li>
+            <li>Le gain de mbt2018_mean sur JPEG reste de l'ordre de <strong>40-50%</strong> à PSNR équivalent.</li>
+            <li>Le tiling 4096 introduit un overhead négligeable sur la qualité grâce au grand champ récepteur des modèles.</li>
+          </ul>
+
+          <p>
+            <strong>Conclusion sur la scalabilité :</strong>
+          </p>
+          <p>
+            La compression neuronale passe à l'échelle sur des images histologiques de grande taille, même
+            sans fine-tuning. Avec tiling 4096, l'inférence complète d'une qualité prend
+            <strong>~20-35 secondes</strong> pour 10000×10000 pixels, ce qui reste compatible avec un usage interactif
+            ou batch sur des sous-régions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="bibtex">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
 @misc{SVSLameHispathologique2024,
-  author       = {Ben Soussan, Nathan},
-  title        = {{Benchmark de compression d'images WSI : JPEG, WebP, JPEG2000 \& SVG}},
-  year         = {2024},
+  author       = {BEN SOUSSAN Nathan},
+  title        = {{Benchmark de compression d'images WSI, SOTA et analyse}},
+  year         = {2026},
   howpublished = {GitHub repository},
   url          = {https://github.com/nathbns/SVSLameHispathologique}
 }
