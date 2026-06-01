@@ -31,11 +31,20 @@ de plusieurs gigaoctets.
 - Présentation slide + début rapport
 - Exploration de nouvelles méthode de conversions vers SVG
 
-**Semaine 5** (en cours):
-- Analyser les fichier DICOM du labo (nv de compression, etc..) (FAIT)
+**Semaine 5** :
+- Analyser les fichier DICOM du labo (nv de compression, etc..)
 - MRXS (comparer avec le svs/dicom)
-- CINR sur un plus grand fichier (EN COURS)
-- Tester les nouvelles piste de svg
+- CINR sur un plus grand fichier 
+- Benchmark de deux modèle de compression neuronale (type CLERIC):
+    - `bmshj2018_factorized` et `mbt2018_mean` via la lib compressai
+    - Pour l'instant ce sont nos meilleurs résultats
+    - Semble etre notre meilleure piste et le SOTA
+
+**Semaine 6 (en cours)**
+- Continuer nos analyses des méthodes de compression neuronale avec le MLCI++, Cheng2020, Ballé2018
+- Voir le coût si appliqué à un TIFF complet:
+    - une fois le modèle le plus performant trouvé -> Fine tuning?
+
 
 
 ### Travail effectué
