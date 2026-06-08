@@ -40,7 +40,7 @@ de plusieurs gigaoctets.
     - Pour l'instant ce sont nos meilleurs résultats
     - Semble etre notre meilleure piste et le SOTA
 
-**Semaine 6 **
+**Semaine 6**
 - Continuer nos analyses des méthodes de compression neuronale avec le MLCI++, Cheng2020, Ballé2018
 - Voir le coût si appliqué à un TIFF complet:
     - une fois le modèle le plus performant trouvé -> Fine tuning?
@@ -52,7 +52,7 @@ de plusieurs gigaoctets.
 - structurer tous ce que j'ai fais pour l'instant
 - analyse globale du travail effectuez pour l'instant
 
-
+mercredi 9h
 
 ### Travail effectué
 
