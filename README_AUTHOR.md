@@ -1,3 +1,5 @@
+Readme maintenue tous le long du stage
+
 # Compression d'Images SVS/DICOM
 
 ### Rapport détaillé du SOTA + source utiles sur les liens ci-dessous:
@@ -47,21 +49,11 @@ de plusieurs gigaoctets.
 - code carbone sur les data 
 - rapport de stage (anglais)
 
-**Semaine 7 (en cours)**
+**Semaine 7 - 8**
 - Finir le rapport de stage (à rendre pour le 16/06)
 - structurer tous ce que j'ai fais pour l'instant
 - analyse globale du travail effectuez pour l'instant
 
-mercredi 9h
-
-### Travail effectué
-
-- État de l'art: [lien SOTA](rapport_etat_art.md) 
-- Analyse fichier SVS et première expérimentation (JPEG, WebP, JPEG2K, JPEG XL, AVIF): [lien benchmark](expe_compression_classique/01_analyse_et_premiere_expe.ipynb)
-- Benchmark comparatif sur une dataset de patch 256x256 (variation du JPEG): [lien benchmark](expe_compression_classique/02_benchmark_compression_dataset.ipynb)
-- Benchmark comparatif sur une dataset de patch 2048×2048 (JPEG, WebP, JPEG2K, JPEG XL, AVIF): [lien benchmark](expe_compression_classique/benchmarkJPEG_WEBP_JPEG2000.ipynb)
-- Benchmark SVG vectoriel avec VTracer: [lien benchmark](expe_compression_classique/test_format_svg.ipynb)
-- Reproduction du papier CINR (Lee et al., MICCAI 2024) sur Apple Silicon (MPS). Modèle : Fourier features + SineCNN sur un patch 256×256: [lien vers demo CINR](cinr-repro/notebooks/01_demo_tile.ipynb)
 
 ### Données utilisées
 - **91 lames SVS TCGA** 
